@@ -23,12 +23,12 @@ if __name__ == '__main__':
         data = json.load(f)
         df = pd.DataFrame(data)
 
-    # print_first_not_null(df, 'my_pledge')
+    # print_first_not_null(df, 'cumulative_deposits')
     # print_first_with_exact_value(df, 'role', 'Validator')
 
-    # We need to keep the following keys: account, role, balance, slow_wallet, my_pledge
+    # We need to keep the following keys: account, role, balance, slow_wallet, my_pledge, comm_wallet
 
-    df = df[['account', 'role', 'balance', 'slow_wallet', 'my_pledge']]
+    df = df[['account', 'role', 'balance', 'slow_wallet', 'my_pledge', 'comm_wallet']]
 
     # export to csv
     df.to_csv('snapshot.csv', index=False)
